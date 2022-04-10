@@ -66,7 +66,7 @@ class MY_Controller extends MX_Controller
 
     {
 
-        
+
 
         parent::__construct();
 
@@ -76,7 +76,7 @@ class MY_Controller extends MX_Controller
 
         // Normally, to call any of the available CodeIgniter object or pre defined library classes then you need to declare.
 
-        $CI =& get_instance();
+        $CI = &get_instance();
 
 
 
@@ -93,132 +93,85 @@ class MY_Controller extends MX_Controller
         // Copyright
 
         $this->data['copyright'] = $date;
-
-
-
-
-
     }
 
 
 
-    function __nocache() {
+    function __nocache()
+    {
 
-        $this->output->set_header('Last-Modified:'.gmdate('D, d M Y H:i:s').'GMT');
+        $this->output->set_header('Last-Modified:' . gmdate('D, d M Y H:i:s') . 'GMT');
 
         $this->output->set_header('Cache-Control: no-store, no-cache, must-revalidate');
 
-        $this->output->set_header('Cache-Control: post-check=0, pre-check=0',false);
+        $this->output->set_header('Cache-Control: post-check=0, pre-check=0', false);
 
         $this->output->set_header('Pragma: no-cache');
-
     }
-
-
-
 }
 
 
 
-class MY_Frontend extends MY_Controller{
+class MY_Admin extends MY_Controller
+{
 
 
 
-    public function __construct(){
+    public function __construct()
+    {
 
         parent::__construct();
 
-        $this->path_theme='main_frontend';
-
-    
-
+        $this->path_theme = 'admin_themes';
     }
 
 
 
-    function display($name=''){
+    function display($name = '')
+    {
 
-        
 
-        $tpl=$this->path_theme.'/layout_single';
 
-        
+        $tpl = $this->path_theme . '/layout_single';
 
-        $this->load->view($tpl,$this->data);
 
+
+        $this->load->view($tpl, $this->data);
     }
-
 }
+class MY_Login extends MY_Controller
+{
 
 
 
-class MY_Landing_Frontend extends MY_Controller{
-
-
-
-    public function __construct(){
+    public function __construct()
+    {
 
         parent::__construct();
 
-        $this->path_theme='welcome_frontend';
-
-    
-
+        $this->path_theme = 'login_themes';
     }
 
 
 
-    function display($name=''){
+    function display($name = '')
+    {
 
-        
 
-        $tpl=$this->path_theme.'/singgle_layout';
 
-        
+        $tpl = $this->path_theme . '/layout_single';
 
-        $this->load->view($tpl,$this->data);
 
+
+        $this->load->view($tpl, $this->data);
     }
-
 }
-
-class MY_EXAM extends MY_Controller{
-
-
-
-    public function __construct(){
-
-        parent::__construct();
-
-        $this->path_theme='exam_themes';
-
-    
-
-    }
-
-
-
-    function display($name=''){
-
-        
-
-        $tpl=$this->path_theme.'/layout_single';
-
-        
-
-        $this->load->view($tpl,$this->data);
-
-    }
-
-}
-
 // Backend controller
 
-require_once(APPPATH.'core/Backend_Controller.php');
+require_once(APPPATH . 'core/Backend_Controller.php');
 
 
 
 // Frontend controller
 
-require_once(APPPATH.'core/Frontend_Controller.php');
-
+require_once(APPPATH . 'core/Frontend_Controller.php');

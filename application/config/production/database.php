@@ -1,6 +1,6 @@
 <?php
 
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
 
 
@@ -158,7 +158,7 @@ $db['default'] = array(
 
 	'password' => '',
 
-	'database' => 'alphatech_lms_sma',
+	'database' => 'lms_sd_manager',
 
 	'dbdriver' => 'mysqli',
 
@@ -189,4 +189,3 @@ $db['default'] = array(
 	'save_queries' => TRUE
 
 );
-

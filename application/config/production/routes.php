@@ -1,6 +1,6 @@
 <?php
 
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
 
 
@@ -103,7 +103,30 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $route['default_controller'] = 'auth/controller_ctl';
 
 
+$route['auth']  = 'auth/controller_ctl';
+
+$route['auth/(:any)'] = 'auth/controller_ctl/$1';
+
+$route['auth/(:any)/(:any)'] = 'auth/controller_ctl/$1/$2';
+
+
+
+$route['dashboard']  = 'dashboard/controller_ctl';
+
+$route['dashboard/(:any)'] = 'dashboard/controller_ctl/$1';
+
+$route['dashboard/(:any)/(:any)'] = 'dashboard/controller_ctl/$1/$2';
+
+
+
+$route['chatting']  = 'chatting/controller_ctl';
+
+$route['chatting/(:any)'] = 'chatting/controller_ctl/$1';
+
+$route['chatting/(:any)/(:any)'] = 'chatting/controller_ctl/$1/$2';
+
+
+
 $route['404_override'] = '';
 
 $route['translate_uri_dashes'] = FALSE;
-
